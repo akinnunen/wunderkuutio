@@ -123,7 +123,7 @@ describe('Cube', () => {
 
   it("should get unique letter characters", () => {
     const expected = ['a', 'd', 'e', 'f', 'g', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'x'];
-    const actual = cube.layers.uniqueLetterCharacters().sort(sortByLetterCharacter);
+    const actual = cube.layers.uniqChars().sort(sortByLetterCharacter);
     assert.deepEqual(actual, expected);
   });
 
