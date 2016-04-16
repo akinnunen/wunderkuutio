@@ -1,0 +1,5 @@
+- apt: name=curl state=present
+
+- command: bash -c "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -" creates=/etc/apt/sources.list.d/nodesource.list
+
+- apt: name=nodejs state=present

@@ -1,0 +1,3 @@
+- file: path=/home/vagrant/node_modules owner=vagrant group=vagrant state=directory
+
+- file: src=/home/vagrant/node_modules dest=/vagrant/node_modules owner=vagrant group=vagrant state=link
