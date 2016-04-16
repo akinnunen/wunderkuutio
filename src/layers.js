@@ -19,4 +19,8 @@ export class Layers extends Array {
     return flatten(this);
   }
 
+  uniqueLetterCharacters() {
+    return [ ...new Set(this.letters().map(each => each.letter)) ];
+  }
+
 }

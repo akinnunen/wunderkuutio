@@ -23,3 +23,6 @@ aakkonen
 - löytyykö aak
     -> ei
     -> otetaan listasta pois kaikki aak-aluiset
+
+
+// console.log(util.inspect(this.layers, { showHidden: false, depth: null }));
