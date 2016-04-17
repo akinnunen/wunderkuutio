@@ -27,16 +27,17 @@ describe('Cube', () => {
     assert.equal(cube.letterAt({ x: 1, y: 3, z: 1 }), 'g');
   });
 
-  it("should get the coordinates of a letter 'o'", () => {
-     assert.deepEqual(cube.letterCoordinates('o'), [{ x: 2, y: 0, z: 1 }, { x: 1, y: 1, z: 0 }, { x: 1, y: 2, z: 2 }, { x: 0, y: 3, z: 1 }]);
+  it("should find all 'o' letters", () => {
+    assert.deepEqual(cube.lettersByChar('o'), [buildLetter('o', 2, 0, 1), buildLetter('o', 1, 1, 0), buildLetter('o', 1, 2, 2), buildLetter('o', 0, 3, 1)]);
   });
 
-  it("should get the coordinates of a letter 'p'", () => {
-     assert.deepEqual(cube.letterCoordinates('p'), [{ x: 1, y: 0, z: 1 }, { x: 2, y: 0, z: 2 }, { x: 2, y: 2, z: 0 }, { x: 1, y: 3, z: 2 }]);
+  it("should find all 'p' letters", () => {
+     assert.deepEqual(cube.lettersByChar('p'), [buildLetter('p', 1, 0, 1), buildLetter('p', 2, 0, 2), buildLetter('p', 2, 2, 0), buildLetter('p', 1, 3, 2)]);
   });
 
-  it("should get the coordinates of a letter 'x'", () => {
-     assert.deepEqual(cube.letterCoordinates('x'), [{ x: 2, y: 3, z: 0 }]);
+  it("should find all 'x' letters", () => {
+
+     assert.deepEqual(cube.lettersByChar('x'), [buildLetter('x', 2, 3, 0)]);
   });
 
   it("should get letters around 'j' at x: 0, y: 0, z: 0", () => {
@@ -109,16 +110,19 @@ describe('Cube', () => {
     assert.deepEqual(actual, expected);
   });
 
-  it("should be touching letter 'q' from letter 'j' (x: 0, y: 0, z: 0)", () => {
-    assert(cube.isTouchingLetter(buildLetter('j', 0, 0, 0), 'q'));
+  it("should have adjacent letter 'q' for letter 'j' (x: 0, y: 0, z: 0)", () => {
+    const letters = cube.adjacentLettersByChar(buildLetter('j', 0, 0, 0), 'q');
+    assert.deepEqual(letters[0], buildLetter('q', 1, 0, 0));
   });
 
-  it("should be touching letter 'd' from letter 'e' (x: 1, y: 2, z: 1)", () => {
-    assert(cube.isTouchingLetter(buildLetter('e', 1, 2, 1), 'd'));
+  it("should have adjacent letter 'd' for letter 'e' (x: 1, y: 2, z: 1)", () => {
+    const letters = cube.adjacentLettersByChar(buildLetter('e', 1, 2, 1), 'd');
+    assert.deepEqual(letters[0], buildLetter('d', 0, 1, 1));
   });
 
-  it("should not be touching letter 'a' from letter 'k' (x: 1, y: 1, z: 2)", () => {
-    assert(!cube.isTouchingLetter(buildLetter('k', 1, 1, 2), 'a'));
+  it("should not have adjacent letter 'a' for letter 'k' (x: 1, y: 1, z: 2)", () => {
+    const letters = cube.adjacentLettersByChar(buildLetter('k', 1, 1, 2), 'a');
+    assert(letters.length === 0);
   });
 
   it("should get unique letter characters", () => {

@@ -5,7 +5,7 @@
   "repository": "gitlab:to/do",
   "version": "1.0.0",
   "scripts": {
-    "test": "ruby cube_to_json.rb && ruby words_to_json.rb && mocha --compilers js:babel/register --recursive",
+    "test": "ruby generate_json.rb && mocha --compilers js:babel/register --recursive",
     "pretest": "jshint src && jshint test"
   },
   "author": "Anssi Kinnunen",

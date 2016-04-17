@@ -17,10 +17,9 @@ export class Cube {
       .letterAt(coordinates.x);
   }
 
-  letterCoordinates(letter) {
+  lettersByChar(char) {
     return this.layers.letters()
-      .filter(each => each.letter === letter)
-      .map(each => each.coordinates());
+      .filter(each => each.letter === char);
   }
 
   lettersAround(letter) {
@@ -42,9 +41,9 @@ export class Cube {
       .filter(each => !isSelf(each));
   }
 
-  isTouchingLetter(sourceLetter, letter) {
+  adjacentLettersByChar(sourceLetter, char) {
     return this.lettersAround(sourceLetter)
-      .some(each => each.letter == letter);
+      .filter(each => each.letter == char);
   }
 
 }

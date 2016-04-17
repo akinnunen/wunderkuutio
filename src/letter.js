@@ -11,4 +11,8 @@ export class Letter {
     return { x: this.x, y: this.y, z: this.z };
   }
 
+  id() {
+    return parseInt('' + this.letter.charCodeAt(0) + this.x + this.y + this.z);
+  }
+
 }

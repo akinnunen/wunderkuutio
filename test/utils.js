@@ -14,10 +14,7 @@ const sort = (a, b) => {
 };
 
 export const sortByLetter = (a, b) => {
-
-  const asInt = (l) => parseInt('' + l.letter.charCodeAt(0) + l.x + l.y + l.z);
-
-  return sort(asInt(a), asInt(b));
+  return sort(a.id(), b.id());
 };
 
 export const sortByLetterCharacter = (a, b) => {

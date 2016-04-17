@@ -14,8 +14,8 @@ describe('Words', () => {
     assert(words);
   });
 
-  it('should contain more than 90 000 words', () => {
-    assert(words.length > 90000);
+  it('should contain more than 30 000 words', () => {
+    assert(words.length > 30000);
   });
 
 });

@@ -1,29 +1,46 @@
 import assert from 'assert';
 
-import { findWords, hasValidChars } from '../src/finder';
+import { findWords } from '../src/finder';
+import { Cube } from '../src/cube';
+import { Words } from '../src/words';
+
 
 describe('Finder', () => {
-
-  const uniqLayerChars = ['a', 'd', 'e', 'f', 'g', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'x'];
 
   it('should init', () => {
     assert(findWords);
   });
-
-  it('should find words', () => {
-    assert(findWords());
+/*
+  it("should not find word 'aakkonen'", function() {
+    const cube = new Cube();
+    assert.equal(findWords(['aakkonen'], cube).length, 0);
   });
 
-  it("should contain valid characters for word 'aakkonen'", () => {
-    assert(hasValidChars(uniqLayerChars, 'aakkonen'));
+  it("should find word 'koi'", function() {
+    const cube = new Cube();
+    assert.equal(findWords(['koi'], cube).length, 1);
   });
 
-  it("should contain valid characters for word 'kodifioida'", () => {
-    assert(hasValidChars(uniqLayerChars, 'kodifioida'));
+  it("should find word 'tiili'", function() {
+    const cube = new Cube();
+    assert.equal(findWords(['tiili'], cube).length, 1);
+  });
+*/
+
+  it("should find word 'wunderdog'", function() {
+    const cube = new Cube();
+    assert.equal(findWords(['wunderdog'], cube).length, 1);
   });
 
-  it("should not contain valid characters for word 'taajamametsä'", () => {
-    assert(!hasValidChars(uniqLayerChars, 'taajamametsä'));
+/*
+  it("should find word all words", function() {
+    this.timeout(0);
+    const cube = new Cube();
+    const words = new Words();
+    const found = findWords(words, cube);
+    console.log(found.length);
+    assert(found.length > 0);
   });
-
+*/
 });
+
