@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import { Layer } from './layer';
 
 export class Layers extends Array {
@@ -19,10 +17,6 @@ export class Layers extends Array {
     );
 
     return flatten(this);
-  }
-
-  uniqChars() {
-    return _.uniq(this.letters().map(each => each.letter));
   }
 
 }

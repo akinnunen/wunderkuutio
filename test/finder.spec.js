@@ -4,13 +4,12 @@ import { findWords } from '../src/finder';
 import { Cube } from '../src/cube';
 import { Words } from '../src/words';
 
-
 describe('Finder', () => {
 
   it('should init', () => {
     assert(findWords);
   });
-/*
+
   it("should not find word 'aakkonen'", function() {
     const cube = new Cube();
     assert.equal(findWords(['aakkonen'], cube).length, 0);
@@ -25,7 +24,6 @@ describe('Finder', () => {
     const cube = new Cube();
     assert.equal(findWords(['tiili'], cube).length, 1);
   });
-*/
 
   it("should find word 'wunderdog'", function() {
     const cube = new Cube();
@@ -39,7 +37,7 @@ describe('Finder', () => {
     const words = new Words();
     const found = findWords(words, cube);
     console.log(found.length);
-    assert(found.length > 0);
+    assert(found.length > 3);
   });
 */
 });

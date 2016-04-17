@@ -1,57 +1,42 @@
 import { Cube } from './cube';
 import { chainContext } from './chain_context';
 
-
-const hasNextInChain = (cube, letter, context) => {
+const isNextInChain = (cube, letter, context) => {
 
   context.usedLetterIds.push(letter.id());
 
-  const adjacent = cube.adjacentLettersByChar(letter, context.nextChar)
-    .filter(letter => !context.usedLetterIds.includes(letter.id()));
+  return cube
+    .adjacentLettersByChar(letter, context.nextChar)
+    .filter(context.isUnusedLetter)
+    .some(nextLetter => {
 
-  console.log('found adjacent:', adjacent);
+      const nextContext = chainContext.next(context, nextLetter);
 
-  return adjacent.some(nextLetter => {
+      if (nextContext.isWordFound()) {
+        return true;
+      }
 
-    const nextContext = chainContext.next(context, nextLetter);
+      return isNextInChain(cube, nextLetter, nextContext);
 
-    if (nextContext.isCompleteWord()) {
-      console.log('word found: ', nextLetter, 'new context', nextContext);
-      return true;
-    }
-
-    console.log('recursing to letter: ', nextLetter, 'with context', nextContext);
-    return hasNextInChain(cube, nextLetter, nextContext);
-
-  });
-
+    });
 
 };
 
-
+// start following character chains from the first letter. do this for each matching letter in the cube until
+// all chains have been traversed. if the word is found before all chains have been traversed, some() returns
+// true immmediately and we'll move on to the next word. if the word cannot be found, some returns false and
+// the word is filtered out from the word list.
 export const isValidCharChain = (cube, word) => {
 
-  // follow words until the chain is invalid or an actual word
-  const wordChars = word.split('');
+  return cube.lettersByChar(word.charAt(0)).some(letter => {
 
-  // at least one of the chains has to be a complete word - follow the chains for each found character coordinate
-  return cube.lettersByChar(wordChars[0]).some(letter => {
+    const context = chainContext.build(word, letter);
 
-    const context = chainContext.build(word, wordChars, letter);
-
-    console.log('starting to inspect a chain:', letter, 'context: ', context);
-
-    // see if the current chain contains the next character
-    return hasNextInChain(cube, letter, context);
-
+    return isNextInChain(cube, letter, context);
   });
 
 };
 
-export const findWords = (words, cube) => {
-
-  console.log('finding words', words);
-
-  return words.filter(word => isValidCharChain(cube, word));
-};
+// traverse all words and keep valid character chains
+export const findWords = (words, cube) => words.filter(word => isValidCharChain(cube, word));
 
