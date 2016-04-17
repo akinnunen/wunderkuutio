@@ -11,12 +11,4 @@ export class Row extends Array {
     });
   }
 
-  columnAt(x) {
-    return this[x];
-  }
-
-  letterAt(x) {
-    return this[x][0].letter;
-  }
-
 }

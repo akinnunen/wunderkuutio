@@ -26,3 +26,6 @@ aakkonen
 
 
 // console.log(util.inspect(this.layers, { showHidden: false, depth: null }));
+
+
+1119 - 52 904 ms

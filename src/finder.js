@@ -1,9 +1,12 @@
 import { Cube } from './cube';
 import { chainContext } from './chain_context';
+import { wordContext } from './word_context';
+
 
 const isNextInChain = (cube, letter, context) => {
 
   context.usedLetterIds.push(letter.id());
+  wordContext.traversedChains.push(context.currentChain + context.nextChar);
 
   return cube
     .adjacentLettersByChar(letter, context.nextChar)
@@ -12,14 +15,11 @@ const isNextInChain = (cube, letter, context) => {
 
       const nextContext = chainContext.next(context, nextLetter);
 
-      if (nextContext.isWordFound()) {
-        return true;
-      }
+      if (nextContext.isWordFound()) return true;
 
       return isNextInChain(cube, nextLetter, nextContext);
 
     });
-
 };
 
 // start following character chains from the first letter. do this for each matching letter in the cube until
@@ -28,15 +28,26 @@ const isNextInChain = (cube, letter, context) => {
 // the word is filtered out from the word list.
 export const isValidCharChain = (cube, word) => {
 
-  return cube.lettersByChar(word.charAt(0)).some(letter => {
+  wordContext.resetTraversedChains();
+
+  const valid = cube.lettersByChar(word.charAt(0)).some(letter => {
 
     const context = chainContext.build(word, letter);
 
     return isNextInChain(cube, letter, context);
+
   });
+
+
+  if (!valid) wordContext.invalidateTraversedChains();
+
+  return valid;
 
 };
 
-// traverse all words and keep valid character chains
-export const findWords = (words, cube) => words.filter(word => isValidCharChain(cube, word));
+// traverse all words and keep valid character chains. keep a list of invalid chain parts and ignore words
+// that contain these substrings immediately.
+export const findWords = (words, cube) => {
+  return words.filter(word => wordContext.hasInvalidChainParts(word) ? false : isValidCharChain(cube, word));
+};
 

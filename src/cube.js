@@ -10,13 +10,6 @@ export class Cube {
     this.layers = Layers.from(cubeJson, Layers.build, cubeJson);
   }
 
-  letterAt(coordinates) {
-    return this.layers
-      .layerAt(coordinates.y)
-      .rowAt(coordinates.z)
-      .letterAt(coordinates.x);
-  }
-
   lettersByChar(char) {
     return this.layers.letters()
       .filter(each => each.letter === char);

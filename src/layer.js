@@ -6,8 +6,4 @@ export class Layer extends Array {
     return Row.from(layer, Row.build, Object.assign(this, { rowIndex: index }));
   }
 
-  rowAt(z) {
-    return this[z];
-  }
-
 }

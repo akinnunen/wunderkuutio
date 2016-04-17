@@ -30,7 +30,6 @@ describe('Finder', () => {
     assert.equal(findWords(['wunderdog'], cube).length, 1);
   });
 
-/*
   it("should find word all words", function() {
     this.timeout(0);
     const cube = new Cube();
@@ -39,6 +38,6 @@ describe('Finder', () => {
     console.log(found.length);
     assert(found.length > 3);
   });
-*/
+
 });
 

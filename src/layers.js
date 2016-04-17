@@ -6,10 +6,6 @@ export class Layers extends Array {
     return Layer.from(layer, Layer.build, { layerIndex: index });
   }
 
-  layerAt(y) {
-    return this[y];
-  }
-
   letters() {
 
     const flatten = list => list.reduce(

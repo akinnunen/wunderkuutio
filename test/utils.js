@@ -13,11 +13,6 @@ const sort = (a, b) => {
   return 0;
 };
 
-export const sortByLetter = (a, b) => {
-  return sort(a.id(), b.id());
+export const sortById = (aLetter, bLetter) => {
+  return sort(aLetter.id(), bLetter.id());
 };
-
-export const sortByLetterCharacter = (a, b) => {
-  return sort(a, b);
-};
-

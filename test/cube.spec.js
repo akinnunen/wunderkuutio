@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { buildLetter, sortByLetter, sortByLetterCharacter } from './utils';
+import { buildLetter, sortById } from './utils';
 import { Cube } from '../src/cube';
 import { Letter } from '../src/letter';
 
@@ -13,18 +13,6 @@ describe('Cube', () => {
 
   it('should init', () => {
     assert(cube);
-  });
-
-  it('should get the letter at x: 0, y: 0, z: 0', () => {
-    assert.equal(cube.letterAt({ x: 0, y: 0, z: 0 }), 'j');
-  });
-
-  it('should get the letter at x: 2, y: 2, z: 3', () => {
-    assert.equal(cube.letterAt({ x: 2, y: 2, z: 3 }), 's');
-  });
-
-  it('should get the letter at x: 1, y: 3, z: 1', () => {
-    assert.equal(cube.letterAt({ x: 1, y: 3, z: 1 }), 'g');
   });
 
   it("should find all 'o' letters", () => {
@@ -50,9 +38,9 @@ describe('Cube', () => {
       buildLetter('d', 0, 1, 1),
       buildLetter('m', 1, 1, 1),
       buildLetter('o', 1, 1, 0)
-    ].sort(sortByLetter);
+    ].sort(sortById);
 
-    const actual = cube.lettersAround(buildLetter('j', 0, 0, 0)).sort(sortByLetter);
+    const actual = cube.lettersAround(buildLetter('j', 0, 0, 0)).sort(sortById);
 
     assert.deepEqual(actual, expected);
   });
@@ -86,9 +74,9 @@ describe('Cube', () => {
       buildLetter('m', 1, 1, 1),
       buildLetter('i', 2, 1, 1),
       buildLetter('r', 3, 1, 1),
-    ].sort(sortByLetter);
+    ].sort(sortById);
 
-    const actual = cube.lettersAround(buildLetter('d', 2, 2, 2)).sort(sortByLetter);
+    const actual = cube.lettersAround(buildLetter('d', 2, 2, 2)).sort(sortById);
 
     assert.deepEqual(actual, expected);
   });
@@ -103,9 +91,9 @@ describe('Cube', () => {
       buildLetter('i', 3, 2, 1),
       buildLetter('p', 2, 2, 0),
       buildLetter('r', 3, 2, 0)
-    ].sort(sortByLetter);
+    ].sort(sortById);
 
-    const actual = cube.lettersAround(buildLetter('k', 3, 3, 0)).sort(sortByLetter);
+    const actual = cube.lettersAround(buildLetter('k', 3, 3, 0)).sort(sortById);
 
     assert.deepEqual(actual, expected);
   });
