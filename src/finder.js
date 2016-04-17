@@ -1,23 +1,24 @@
 import { Cube } from './cube';
-import { chainContext } from './chain_context';
-import { wordContext } from './word_context';
+import { Contexts } from './contexts';
 
+// follow a specific character chain until the word is found (or adjacent letters cannot be found). recursively
+// test all chains for each adjacent letter and their descendants. create a new chain context during each iteration
+// to keep track of used letters.
+const isNextInChain = (ctx, chainCtx, letter) => {
 
-const isNextInChain = (cube, letter, context) => {
+  chainCtx.addUsedLetter(letter);
+  ctx.words.addTraversedChain(chainCtx.currentChain + chainCtx.nextChar);
 
-  context.usedLetterIds.push(letter.id());
-  wordContext.traversedChains.push(context.currentChain + context.nextChar);
-
-  return cube
-    .adjacentLettersByChar(letter, context.nextChar)
-    .filter(context.isUnusedLetter)
+  return ctx.cube
+    .adjacentLettersByChar(letter, chainCtx.nextChar)
+    .filter(chainCtx.isUnusedLetter)
     .some(nextLetter => {
 
-      const nextContext = chainContext.next(context, nextLetter);
+      const nextChainCtx = chainCtx.next(nextLetter);
 
-      if (nextContext.isWordFound()) return true;
+      if (nextChainCtx.isWordFound()) return true;
 
-      return isNextInChain(cube, nextLetter, nextContext);
+      return isNextInChain(ctx, nextChainCtx, nextLetter);
 
     });
 };
@@ -26,28 +27,30 @@ const isNextInChain = (cube, letter, context) => {
 // all chains have been traversed. if the word is found before all chains have been traversed, some() returns
 // true immmediately and we'll move on to the next word. if the word cannot be found, some returns false and
 // the word is filtered out from the word list.
-export const isValidCharChain = (cube, word) => {
+export const isValidCharChain = (ctx, word) => {
 
-  wordContext.resetTraversedChains();
+  ctx.words.resetTraversedChains();
 
-  const valid = cube.lettersByChar(word.charAt(0)).some(letter => {
+  const valid = ctx.cube.lettersByChar(word.charAt(0)).some(letter => {
 
-    const context = chainContext.build(word, letter);
+    const chainCtx = ctx.chains.init(word, letter);
 
-    return isNextInChain(cube, letter, context);
+    return isNextInChain(ctx, chainCtx, letter);
 
   });
 
 
-  if (!valid) wordContext.invalidateTraversedChains();
+  if (!valid) ctx.words.invalidateTraversedChains();
 
   return valid;
 
 };
 
 // traverse all words and keep valid character chains. keep a list of invalid chain parts and ignore words
-// that contain these substrings immediately.
+// that contain these substrings immediately (7x performance gain).
 export const findWords = (words, cube) => {
-  return words.filter(word => wordContext.hasInvalidChainParts(word) ? false : isValidCharChain(cube, word));
-};
 
+  let ctx = new Contexts(cube);
+
+  return words.filter(word => ctx.words.containsInvalidParts(word) ? false : isValidCharChain(ctx, word));
+};

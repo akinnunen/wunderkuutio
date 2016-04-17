@@ -20,7 +20,7 @@ export class Cube {
     const isAdjacent = (each, axis) =>
       each[axis] == letter[axis] ||
       each[axis] + 1 == letter[axis] ||
-      each[axis] - 1 == letter[axis]; // jshint -W069
+      each[axis] - 1 == letter[axis];
 
     const isSelf = (each) =>
       each.x == letter.x &&

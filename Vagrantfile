@@ -6,11 +6,6 @@ Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "4096"
-    vb.cpus = 8
-  end
-
   config.vm.provision 'shell', path: 'scripts/install_ansible.sh'
   config.vm.provision 'shell', path: 'scripts/run_ansible.sh'
 

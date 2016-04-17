@@ -35,9 +35,7 @@ describe('Finder', () => {
     const cube = new Cube();
     const words = new Words();
     const found = findWords(words, cube);
-    console.log(found.length);
-    assert(found.length > 3);
+    assert.equal(found.length, 1119);
   });
 
 });
-
