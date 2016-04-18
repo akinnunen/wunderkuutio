@@ -11,7 +11,7 @@ A competition entry for http://www.wunderdog.fi/wunderkuutio/ by Anssi Kinnunen 
 
 ## Results
 
-Found a total of **1119** words (see RESULTS.md) in **8736 ms**.
+Found a total of **1119** words (see RESULTS.md) in **7157 ms**.
 
 ## Implementation explained shortly
 
@@ -19,26 +19,26 @@ Found a total of **1119** words (see RESULTS.md) in **8736 ms**.
   - words that contain characters which are not present in the cube are filtered out (less work for JavaScript)
 2. the cube letters are mapped to x, y and z coordinate space
 3. letter chains are processed recursively
+  - invalid chains (e.g. 'aak') are cached and the next processed words with these letter chains are ignored immediately
 
-More detailed info in `finder.js` and tests.
+Aimed for readable, testable and modular code. More detailed info in `finder.js` and tests.
 
-## Elegancy
+## Usage
 
-What makes my entry very elegant is how the all the above mentioned tools are used together :) The project can be run in a matter of minutes after cloning with these simple steps (as long as Vagrant and VirtualBox are installed):
+If you have Vagrant and VirtualBox installed, you can get the project up and running in a matter of minutes:
 
 - `git clone git@bitbucket.org:aekinnunen/wunderkuutio.git` (currently private)
 - `cd wunderkuutio`
 - `vagrant up`
 - `vagrant ssh`
 - `cd /vagrant`
+- `npm install`
 - `npm test`
 
 Getting rid of the project is even easier:
 
 - `exit`
 - `vagrant destroy`
-
-And at this point your computer is clean again. Nothing had to be installed or removed \o/
 
 ## Contact info
 

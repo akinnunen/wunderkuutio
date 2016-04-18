@@ -739,7 +739,7 @@ pre {
 <h2>
 <a id="user-content-results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results</h2>
 
-<p>Found a total of <strong>1119</strong> words (see RESULTS.md) in <strong>8736 ms</strong>.</p>
+<p>Found a total of <strong>1119</strong> words (see RESULTS.md) in <strong>7157 ms</strong>.</p>
 
 <h2>
 <a id="user-content-implementation-explained-shortly" class="anchor" href="#implementation-explained-shortly" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementation explained shortly</h2>
@@ -752,15 +752,20 @@ pre {
 </ul>
 </li>
 <li>the cube letters are mapped to x, y and z coordinate space</li>
-<li>letter chains are processed recursively</li>
+<li>letter chains are processed recursively
+
+<ul>
+<li>invalid chains (e.g. 'aak') are cached and the next processed words with these letter chains are ignored immediately</li>
+</ul>
+</li>
 </ol>
 
-<p>More detailed info in <code>finder.js</code> and tests.</p>
+<p>Aimed for readable, testable and modular code. More detailed info in <code>finder.js</code> and tests.</p>
 
 <h2>
-<a id="user-content-elegancy" class="anchor" href="#elegancy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Elegancy</h2>
+<a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>What makes my entry very elegant is how the all the above mentioned tools are used together :) The project can be run in a matter of minutes after cloning with these simple steps (as long as Vagrant and VirtualBox are installed):</p>
+<p>If you have Vagrant and VirtualBox installed, you can get the project up and running in a matter of minutes:</p>
 
 <ul>
 <li>
@@ -769,6 +774,7 @@ pre {
 <li><code>vagrant up</code></li>
 <li><code>vagrant ssh</code></li>
 <li><code>cd /vagrant</code></li>
+<li><code>npm install</code></li>
 <li><code>npm test</code></li>
 </ul>
 
@@ -778,8 +784,6 @@ pre {
 <li><code>exit</code></li>
 <li><code>vagrant destroy</code></li>
 </ul>
-
-<p>And at this point your computer is clean again. Nothing had to be installed or removed \o/</p>
 
 <h2>
 <a id="user-content-contact-info" class="anchor" href="#contact-info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact info</h2>

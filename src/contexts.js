@@ -43,10 +43,10 @@ class Words {
 
   invalidateTraversedChains() {
 
-    var longesInvalidChain = this.traversedChains
+    var longestInvalidChain = this.traversedChains
       .reduce((a, b) => a.length > b.length ? a : b);
 
-    if (!this.invalidParts.includes(longesInvalidChain)) this.invalidParts.push(longesInvalidChain);
+    if (!this.invalidParts.includes(longestInvalidChain)) this.invalidParts.push(longestInvalidChain);
 
   }
 

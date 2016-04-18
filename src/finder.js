@@ -27,7 +27,7 @@ const isNextInChain = (ctx, chainCtx, letter) => {
 // all chains have been traversed. if the word is found before all chains have been traversed, some() returns
 // true immmediately and we'll move on to the next word. if the word cannot be found, some returns false and
 // the word is filtered out from the word list.
-export const isValidCharChain = (ctx, word) => {
+const isValidCharChain = (ctx, word) => {
 
   ctx.words.resetTraversedChains();
 
@@ -38,7 +38,6 @@ export const isValidCharChain = (ctx, word) => {
     return isNextInChain(ctx, chainCtx, letter);
 
   });
-
 
   if (!valid) ctx.words.invalidateTraversedChains();
 
