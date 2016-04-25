@@ -36,14 +36,17 @@ denimi
 depis
 desi
 design
+designer
 despotismi
 diodi
 dippi
 disko
+dispositio
 distikon
 dogmi
 domino
 donitsi
+drinkki
 druidi
 duo
 edes
@@ -69,6 +72,7 @@ emiiri
 eminorkko
 emissio
 emo
+emootio
 empiiri
 empiirikko
 empirismi
@@ -81,6 +85,7 @@ ensikoti
 ensiksi
 ensisuoja
 epidermi
+epikriisi
 episodi
 epookki
 erektio
@@ -89,6 +94,7 @@ eroon
 esi
 esiin
 esikko
+esikoisoikeus
 esikoisteos
 esimerkki
 esimies
@@ -106,6 +112,7 @@ fajanssi
 fan
 fani
 ferro
+fetisismi
 fetisisti
 fetissi
 fiilis
@@ -116,6 +123,7 @@ foksi
 fondue
 foneemi
 forte
+fortissimo
 fossiili
 freoni
 fresko
@@ -163,6 +171,7 @@ isi
 ismi
 iso
 isopanda
+isous
 itse
 jaa
 jade
@@ -174,6 +183,7 @@ jaoke
 jaos
 japani
 japsi
+jeeppi
 jengi
 jep
 jodi
@@ -186,6 +196,7 @@ jokin
 joko
 joo
 jooga
+joogi
 jopa
 jopi
 jos
@@ -227,10 +238,12 @@ kerni
 kero
 kerroin
 kerros
+keskeisliike
 kesken
 keski
 keskinopeus
 keskipiste
+keskisormi
 keskitse
 kesti
 kesto
@@ -258,6 +271,7 @@ kimpi
 kina
 kino
 kinos
+kinuski
 kioski
 kippi
 kippis
@@ -271,6 +285,7 @@ kiri
 kiristin
 kiro
 kirppis
+kirroosi
 kirsi
 kirsu
 kis
@@ -311,6 +326,7 @@ komissio
 kompa
 kompositio
 komposti
+kompostori
 komppi
 kompromissi
 kompus
@@ -320,6 +336,7 @@ koneikko
 koneisto
 konepaja
 koni
+konsiili
 koodeksi
 koodi
 koodinumero
@@ -341,6 +358,7 @@ kori
 korina
 koris
 koriste
+korko
 korni
 korpi
 korpisuo
@@ -372,6 +390,7 @@ kroisos
 krokotiili
 kromi
 krossi
+krusifiksi
 kserokopio
 lie
 lied
@@ -383,8 +402,11 @@ liesi
 liidin
 liidokki
 liike
+liikemerkki
+liikemies
 liikenimi
 liikeoppi
+liikepankki
 liikkis
 liimoite
 liina
@@ -413,6 +435,7 @@ lippo
 liri
 liro
 lisko
+litsi
 medisiina
 meedio
 mega
@@ -432,9 +455,11 @@ midi
 miedosti
 miero
 mies
+miesmuistiin
 miimikko
 miina
 miinus
+miinusmerkki
 mikin
 mikki
 mikko
@@ -487,6 +512,9 @@ muna
 munkisto
 munkki
 muona
+musiikki
+musiikkiopisto
+musiikkiteos
 naapuri
 naapuristo
 napa
@@ -535,9 +563,12 @@ nurmi
 oikea
 oikeaan
 oikein
+oikeisto
+oikeistopiiri
 oikeus
 oikeusnormi
 oikoa
+oikotie
 oitis
 oja
 ojoon
@@ -630,6 +661,8 @@ piippo
 piiri
 piirikokous
 piirioja
+piirrin
+piirros
 piirto
 piiru
 piisi
@@ -641,6 +674,7 @@ piko
 pimppi
 pimu
 pinja
+pinkki
 pinko
 pinkoa
 pino
@@ -687,6 +721,7 @@ pondi
 poni
 ponsi
 pop
+popmusiikki
 pore
 poretin
 porina
@@ -700,6 +735,7 @@ preemio
 prefekti
 premissi
 prepositio
+presidiumi
 presiis
 prestiisi
 presto
@@ -707,6 +743,7 @@ preussi
 priimi
 priimus
 priki
+primekorko
 prinssi
 pro
 profaani
@@ -742,6 +779,7 @@ punoja
 punos
 punssi
 puomi
+puomiliike
 purismi
 puristi
 purse
@@ -765,6 +803,7 @@ reisi
 reissu
 reki
 rekki
+rekkiliike
 reksi
 rektio
 remissi
@@ -793,30 +832,36 @@ riite
 rike
 riki
 rikki
+rikkioksidi
 rikko
 rikkoa
 rikkoja
 rikkomus
 rikos
 rikosfilmi
+rikosoikeus
 riksi
 rimpi
 rimpisuo
 rimpsu
 rimssu
 rimsu
+rinki
 ripe
 rippi
 rippis
 ripsi
 ripsisidos
 riski
+riskiseksi
 risoa
 risti
 ristiin
 ristikki
 ristikko
+ristipisto
 ristiside
+ristisiitos
 risu
 riuna
 rodeo
@@ -870,6 +915,7 @@ ruskea
 rusko
 ruso
 rusokki
+russisti
 sees
 sei
 seili
@@ -882,6 +928,7 @@ seisoja
 seisokki
 seiti
 sekki
+sekkirikos
 sekoite
 seksi
 seksifilmi
@@ -904,6 +951,7 @@ side
 sidepisto
 sidoksiin
 sidos
+sifoni
 sifonki
 siili
 siimes
@@ -911,6 +959,8 @@ siipi
 siipimies
 siipirikko
 siipisuoni
+siirrin
+siirros
 siirto
 siis
 siisti
@@ -938,6 +988,8 @@ sisin
 sisko
 siskous
 sissi
+sissiliike
+sissimuona
 sisu
 sisus
 siten
@@ -973,6 +1025,7 @@ sondi
 soopa
 soosi
 sopa
+sopimisoikeus
 sopimus
 soppi
 sopu
@@ -991,9 +1044,11 @@ soundi
 speksi
 spermisidi
 spiikki
+spiritismi
 spondee
 sprii
 stereo
+stereoskooppi
 steroidi
 stidi
 stikki
@@ -1061,6 +1116,7 @@ todiste
 toi
 toimenpide
 toimi
+toimipiiri
 toimite
 toiseksi
 toisen
@@ -1088,6 +1144,7 @@ trikoo
 trio
 trippi
 trokee
+tropiikki
 tropismi
 troppi
 tse

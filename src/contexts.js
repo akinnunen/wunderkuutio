@@ -25,7 +25,7 @@ class Chains {
       currentChain: this.currentChain + nextLetter.letter,
       wordCharIndex: this.wordCharIndex + 1,
       nextChar: this.wordChars[this.wordCharIndex + 2],
-      usedLetterIds: this.usedLetterIds,
+      usedLetterIds: this.usedLetterIds.slice(0, this.wordCharIndex + 1)
     });
   }
 }
