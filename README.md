@@ -1,6 +1,6 @@
 # Wunderkuutio
 
-A competition entry for http://www.wunderdog.fi/wunderkuutio/ by Anssi Kinnunen (https://fi.linkedin.com/in/akinnunen).
+A competition entry for http://www.wunderdog.fi/wunderkuutio/
 
 ## Used technologies, tools and practices
 
@@ -11,7 +11,7 @@ A competition entry for http://www.wunderdog.fi/wunderkuutio/ by Anssi Kinnunen 
 
 ## Results
 
-Found a total of **1119** words (see RESULTS.md) in **7157 ms**.
+Found a total of **1176** words (see RESULTS.md) in **7157 ms**.
 
 ## Implementation explained shortly
 
@@ -27,7 +27,7 @@ Aimed for readable, testable and modular code. More detailed info in `finder.js`
 
 If you have Vagrant and VirtualBox installed, you can get the project up and running in a matter of minutes:
 
-- `git clone git@bitbucket.org:aekinnunen/wunderkuutio.git` (currently private)
+- `git clone git@github.com:akinnunen/wunderkuutio.git`
 - `cd wunderkuutio`
 - `vagrant up`
 - `vagrant ssh`
@@ -39,9 +39,3 @@ Getting rid of the project is even easier:
 
 - `exit`
 - `vagrant destroy`
-
-## Contact info
-
-- Anssi Kinnunen
-- anssi.kinnunen@gmail.com
-- +358 40 5614 927
